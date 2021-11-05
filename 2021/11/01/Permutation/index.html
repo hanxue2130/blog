@@ -16,19 +16,19 @@
   <meta name="description" content="Coding, Swimming, Reading and Enjoying">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta name="description" content="Java program to find second largest number in an array public class Second_largest {    public static void main(String args[])    {        int[] arr1&#x3D;{7,5,6,1,4,2};        int secondHighest&#x3D;findSecond">
+  <meta name="description" content="Write a program to print all permutations of String in java?Solution: Take out first character of String and insert into different places of permutations of remaining String recursively. Please find c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Find Second Largest">
-<meta property="og:url" content="https://hanxue2130.github.io/2021/11/05/Find%20Second%20Largest/index.html">
+<meta property="og:title" content="Permutation">
+<meta property="og:url" content="https://hanxue2130.github.io/2021/11/01/Permutation/index.html">
 <meta property="og:site_name" content="Chen&#39;s blog">
-<meta property="og:description" content="Java program to find second largest number in an array public class Second_largest {    public static void main(String args[])    {        int[] arr1&#x3D;{7,5,6,1,4,2};        int secondHighest&#x3D;findSecond">
+<meta property="og:description" content="Write a program to print all permutations of String in java?Solution: Take out first character of String and insert into different places of permutations of remaining String recursively. Please find c">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-05T10:11:03.000Z">
-<meta property="article:modified_time" content="2021-11-05T10:47:47.087Z">
+<meta property="article:published_time" content="2021-11-01T07:21:45.000Z">
+<meta property="article:modified_time" content="2021-11-05T11:35:45.558Z">
 <meta property="article:tag" content="Easy">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Find Second Largest - Chen&#39;s blog</title>
+  <title>Permutation - Chen&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Find Second Largest">
+            <span class="h2" id="subtitle" title="Permutation">
               
             </span>
 
@@ -184,8 +184,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-05 21:11" pubdate>
-        November 5, 2021 pm
+      <time datetime="2021-11-01 18:21" pubdate>
+        November 1, 2021 pm
       </time>
     </span>
   
@@ -195,7 +195,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      693 words
+      1.2k words
     </span>
   
 
@@ -204,7 +204,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 minutes
+      4 minutes
     </span>
   
 
@@ -241,31 +241,18 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Find Second Largest</h1>
+            <h1 style="display: none">Permutation</h1>
             
             <div class="markdown-body">
-              <p>Java program to find second largest number in an array</p>
-<p>public class Second_largest {<br>    public static void main(String args[])<br>    {<br>        int[] arr1={7,5,6,1,4,2};<br>        int secondHighest=findSecondLargestNumberInTheArray(arr1);<br>        System.out.println(“Second largest element in the array : “+ secondHighest);<br>    }</p>
-<pre><code>public static int findSecondLargestNumberInTheArray(int array[])
-&#123;
-
-    int highest = 0;
-    int secondHighest = 0;
-
-    for (int i = 0; i &lt; array.length; i++) &#123;
-        if (array[i] &gt; highest) &#123;
-            secondHighest = highest;
-            highest = array[i];
-        &#125; else if (array[i] &gt; secondHighest &amp;&amp; array[i]!=highest)
-            // Just replace the second highest
-            secondHighest = array[i];
-    &#125;
-
-    // After exiting the loop, secondHighest now represents the second
-    // largest value in the array
-    return secondHighest;
-&#125;
+              <p>Write a program to print all permutations of String in java?<br>Solution: Take out first character of String and insert into different places of permutations of remaining String recursively. Please find complete solution at how to find all permutations of String in java.</p>
+<p>public class permutation {</p>
+<p>public static void main(String[] args) {</p>
+<p>Set set=permutationOfString(“ABC”);        //ABC stores the set<br>System.out.println(“Permutations of String ABC are:”);<br>for (Iterator iterator = set.iterator(); iterator.hasNext();) {<br>    String string = (String) iterator.next();<br>    System.out.println(string);<br>    }<br>}</p>
+<p>public static Set permutationOfString(String str)<br>{<br>    Set<String> permutationSet=new HashSet();<br>    if(str.length()==0)<br>    {<br>        permutationSet.add(“”);<br>        return permutationSet;<br>    }<br>    // take out first character of String<br>    char c=str.charAt(0);<br>    // Remaining String<br>    String rem=str.substring(1);<br>    Set<String> permutatedSetForRemainingString=permutationOfString(rem);<br>    for (String permutedString: permutatedSetForRemainingString) {<br>        for (int j = 0; j &lt;= permutedString.length(); j++) {<br>            String permutation=insertFirstCharAtDiffPlaces(permutedString,c,j);<br>            permutationSet.add(permutation);<br>        }</String></String></p>
+<pre><code>&#125;
+return permutationSet;
 </code></pre>
+<p>}<br>public static String insertFirstCharAtDiffPlaces(String perm,char firstChar,int index)<br>{<br>    // Inserting firstCharacter of orig String at difference places based on index<br>    return perm.substring(0,index)+firstChar+perm.substring(index);<br>}</p>
 <p>}</p>
 
             </div>
@@ -295,9 +282,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/05/Odd%20Even%20Occurances/">
+                      <a href="/2021/11/03/Sliding%20window/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Odd_Even_Occurances</span>
+                        <span class="hidden-mobile">Sliding window</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -305,8 +292,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/05/Duplicate%20Character/">
-                        <span class="hidden-mobile">Duplicate Character</span>
+                      <a href="/2021/11/01/Odd%20Even%20Occurances/">
+                        <span class="hidden-mobile">Odd_Even_Occurances</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,19 +16,19 @@
   <meta name="description" content="Coding, Swimming, Reading and Enjoying">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta name="description" content="Find first non repeated character in String in java public class first_none_repeatedchar {    public static void main(String[] args) {        String a &#x3D; “easiest”;        for (int i &#x3D; 0; i &lt; a.leng">
+  <meta name="description" content="Given an Array of integers and an Integer k, Find the maximum element of from all the contiguous subarrays of size K. public class Slinding_K_3 {    public static void main(String[] args) {        int">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First None repeated Number">
-<meta property="og:url" content="https://hanxue2130.github.io/2021/11/05/First%20None%20repeated%20Number/index.html">
+<meta property="og:title" content="Sliding window">
+<meta property="og:url" content="https://hanxue2130.github.io/2021/11/03/Sliding%20window/index.html">
 <meta property="og:site_name" content="Chen&#39;s blog">
-<meta property="og:description" content="Find first non repeated character in String in java public class first_none_repeatedchar {    public static void main(String[] args) {        String a &#x3D; “easiest”;        for (int i &#x3D; 0; i &lt; a.leng">
+<meta property="og:description" content="Given an Array of integers and an Integer k, Find the maximum element of from all the contiguous subarrays of size K. public class Slinding_K_3 {    public static void main(String[] args) {        int">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-05T10:11:39.000Z">
-<meta property="article:modified_time" content="2021-11-05T10:43:56.608Z">
+<meta property="article:published_time" content="2021-11-03T01:21:12.000Z">
+<meta property="article:modified_time" content="2021-11-05T11:35:23.685Z">
 <meta property="article:tag" content="Easy">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>First None repeated Number - Chen&#39;s blog</title>
+  <title>Sliding window - Chen&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="First None repeated Number">
+            <span class="h2" id="subtitle" title="Sliding window">
               
             </span>
 
@@ -184,8 +184,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-05 21:11" pubdate>
-        November 5, 2021 pm
+      <time datetime="2021-11-03 12:21" pubdate>
+        November 3, 2021 pm
       </time>
     </span>
   
@@ -195,7 +195,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      268 words
+      356 words
     </span>
   
 
@@ -241,14 +241,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">First None repeated Number</h1>
+            <h1 style="display: none">Sliding window</h1>
             
             <div class="markdown-body">
-              <p>Find first non repeated character in String in java</p>
-<p>public class first_none_repeatedchar {<br>    public static void main(String[] args) {<br>        String a = “easiest”;<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            Character c = a.charAt(i);<br>            if(a.indexOf(c) == a.lastIndexOf(c))<br>            {<br>                System.out.println(a.charAt(i));<br>                break;<br>            }<br>        }</p>
-<pre><code>&#125;
-</code></pre>
-<p>}</p>
+              <p>Given an Array of integers and an Integer k, Find the maximum element of from all the contiguous subarrays of size K.</p>
+<p>public class Slinding_K_3 {<br>    public static void main(String[] args) {<br>        int[] arr = {2,6,-1,2,4,1,-6,5};<br>        int k = 3;<br>        System.out.println(arr.length);<br>        for (int i = k; i &lt;= arr.length; i++) {<br>        int max = Integer.MIN_VALUE;<br>            for (int j = i-k; j &lt; i; j++) {<br>                max = Math.max(max,arr[j]);<br>            }<br>            System.out.print(max);<br>        }<br>    }<br>}</p>
 
             </div>
             <hr>
@@ -277,9 +274,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/05/Sliding%20window/">
+                      <a href="/2021/11/05/Duplicate%20Character/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Sliding window</span>
+                        <span class="hidden-mobile">Duplicate Character</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -287,7 +284,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/05/Permutation/">
+                      <a href="/2021/11/01/Permutation/">
                         <span class="hidden-mobile">Permutation</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>

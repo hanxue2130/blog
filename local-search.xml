@@ -4,181 +4,6 @@
   
   
   <entry>
-    <title>Train Station</title>
-    <link href="/2021/11/05/Train%20Station/"/>
-    <url>/2021/11/05/Train%20Station/</url>
-    
-    <content type="html"><![CDATA[<p>Find minimum number of platforms required for railway station<br>You are given arrival and departure time of trains reaching to a particular station. You need to find minimum number of platforms required to accommodate the trains at any point of time.</p><p>public class TrainStation {<br>    public static void main(String args[])<br>    {<br>        // arr[] = {1:00, 1:40, 1:50, 2:00, 2:15, 4:00}<br>        // dep[] = {1:10, 3:00, 2:20, 2:30, 3:15, 6:00}</p><p>int arr[] = {100, 140, 150, 200, 215, 400};<br>int dep[] = {110, 300, 210, 230,315, 600};<br>System.out.println(“Minimum platforms needed:”+findPlatformsRequiredForStation(arr,dep,6));<br>}</p><p>static int findPlatformsRequiredForStation(int arr[], int dep[], int n)<br>{<br>    int platform_needed = 0, maxPlatforms = 0;<br>    Arrays.sort(arr);<br>    Arrays.sort(dep);<br>    int i = 0, j = 0;</p><p>// Similar to merge in merge sort<br>while (i &lt; n &amp;&amp; j &lt; n)<br>{<br>    if (arr[i] &lt; dep[j])<br>    {<br>        platform_needed++;<br>        i++;<br>        if (platform_needed &gt; maxPlatforms)<br>            maxPlatforms = platform_needed;<br>    }<br>    else<br>    {<br>        platform_needed–;<br>        j++;<br>    }<br>}<br>return maxPlatforms;<br>}<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Close to given number</title>
-    <link href="/2021/11/05/Close%20to%20given%20number/"/>
-    <url>/2021/11/05/Close%20to%20given%20number/</url>
-    
-    <content type="html"><![CDATA[<p>Given a sorted array and a number x, find the pair in array whose sum is closest to x</p><p>public class close_to_given_num {<br>    public static void main(String[] args) {<br>//        close_to_given_num.method1();<br>        close_to_given_num.method2();<br>    }<br>    public static void method1(){<br>        int[] arr = {-40,-5,1,3,6,7,8,20};<br>        int left = 0, right = arr.length -1 , target = 5, min= arr[0] + arr[1] ;<br>        int diff = Math.abs(target - min), position_left =0, position_right = 0;<br>        while(left &lt; right){<br>            int cur = arr[left] + arr[right];<br>            if(diff &gt; Math.abs(target - cur)){<br>                position_left = left;<br>                position_right = right;<br>                diff = Math.abs(target-cur);<br>            }<br>            if (cur&lt;0){<br>                left ++;<br>            }else{<br>                right –;<br>            }</p><p>}<br>System.out.println(“The position of left: “ + arr[position_left] +<br>        “the position of right: “+arr[position_right] + “is close to the “ + target);</p><p>}<br>public static void method2(){<br>    int[] arr = {-40,-5,1,3,6,7,8,20};<br>    int left = 0, right = arr.length -1 , target = 15;<br>    ArrayList&lt;List<Integer>&gt; ls = new ArrayList&lt;&gt;();<br>    ArrayList<Integer> singleList = new ArrayList<Integer>();</Integer></Integer></Integer></p><p>while(left &lt; right){<br>    int cur = arr[left] + arr[right];<br>    if(cur == target){<br>        singleList.add(arr[left]);<br>        singleList.add(arr[right]);<br>        ls.add(singleList);<br>        left ++;<br>        right –;<br>    }</p><pre><code>else if(cur&lt;target)&#123;    left ++;&#125;else&#123;    right --;&#125;</code></pre><p>}<br>for(List<Integer> i:ls){<br>System.out.println(i);</Integer></p><p>}</p><p>}<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Sliding window</title>
-    <link href="/2021/11/05/Sliding%20window/"/>
-    <url>/2021/11/05/Sliding%20window/</url>
-    
-    <content type="html"><![CDATA[<p>Given an Array of integers and an Integer k, Find the maximum element of from all the contiguous subarrays of size K.</p><p>public class Slinding_K_3 {<br>    public static void main(String[] args) {<br>        int[] arr = {2,6,-1,2,4,1,-6,5};<br>        int k = 3;<br>        System.out.println(arr.length);<br>        for (int i = k; i &lt;= arr.length; i++) {<br>        int max = Integer.MIN_VALUE;<br>            for (int j = i-k; j &lt; i; j++) {<br>                max = Math.max(max,arr[j]);<br>            }<br>            System.out.print(max);<br>        }<br>    }<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>First None repeated Number</title>
-    <link href="/2021/11/05/First%20None%20repeated%20Number/"/>
-    <url>/2021/11/05/First%20None%20repeated%20Number/</url>
-    
-    <content type="html"><![CDATA[<p>Find first non repeated character in String in java</p><p>public class first_none_repeatedchar {<br>    public static void main(String[] args) {<br>        String a = “easiest”;<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            Character c = a.charAt(i);<br>            if(a.indexOf(c) == a.lastIndexOf(c))<br>            {<br>                System.out.println(a.charAt(i));<br>                break;<br>            }<br>        }</p><pre><code>&#125;</code></pre><p>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Permutation</title>
-    <link href="/2021/11/05/Permutation/"/>
-    <url>/2021/11/05/Permutation/</url>
-    
-    <content type="html"><![CDATA[<p>Write a program to print all permutations of String in java?<br>Solution: Take out first character of String and insert into different places of permutations of remaining String recursively. Please find complete solution at how to find all permutations of String in java.</p><p>public class permutation {</p><p>public static void main(String[] args) {</p><p>Set set=permutationOfString(“ABC”);        //ABC stores the set<br>System.out.println(“Permutations of String ABC are:”);<br>for (Iterator iterator = set.iterator(); iterator.hasNext();) {<br>    String string = (String) iterator.next();<br>    System.out.println(string);<br>    }<br>}</p><p>public static Set permutationOfString(String str)<br>{<br>    Set<String> permutationSet=new HashSet();<br>    if(str.length()==0)<br>    {<br>        permutationSet.add(“”);<br>        return permutationSet;<br>    }<br>    // take out first character of String<br>    char c=str.charAt(0);<br>    // Remaining String<br>    String rem=str.substring(1);<br>    Set<String> permutatedSetForRemainingString=permutationOfString(rem);<br>    for (String permutedString: permutatedSetForRemainingString) {<br>        for (int j = 0; j &lt;= permutedString.length(); j++) {<br>            String permutation=insertFirstCharAtDiffPlaces(permutedString,c,j);<br>            permutationSet.add(permutation);<br>        }</String></String></p><pre><code>&#125;return permutationSet;</code></pre><p>}<br>public static String insertFirstCharAtDiffPlaces(String perm,char firstChar,int index)<br>{<br>    // Inserting firstCharacter of orig String at difference places based on index<br>    return perm.substring(0,index)+firstChar+perm.substring(index);<br>}</p><p>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Odd_Even_Occurances</title>
-    <link href="/2021/11/05/Odd%20Even%20Occurances/"/>
-    <url>/2021/11/05/Odd%20Even%20Occurances/</url>
-    
-    <content type="html"><![CDATA[<p>Separate odd and even numbers in an array<br>Given an array of integers, you need to segregate odd and even numbers in an array.<br>Please note: Order of elements can be changed.</p><p>ublic class Seperating {</p><p>public static void main(String[] args) {</p><p>int arr[]={12, 17, 70, 15, 22, 65, 21, 90};<br>arr=separateEvenOddNumbers(arr);<br>System.out.println(“nArray after separating even and odd numbers : “);<br>for (int i = 0; i &lt; arr.length; i++) {<br>    System.out.print(arr[i]+” “);<br>}<br>}</p><p>public static int[] separateEvenOddNumbers(int arr[])<br>{<br>    int left=0;<br>    int right=arr.length-1;<br>        while(arr[left]%2==0)<br>        {<br>            left++;<br>        }<br>        while(arr[right]%2==1)<br>        {<br>            right–;<br>        }</p><pre><code>if(left&lt;right)&#123;int temp=arr[left];arr[left]=arr[right];arr[right]=temp;&#125;return arr;&#125;&#125;</code></pre>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Find Second Largest</title>
-    <link href="/2021/11/05/Find%20Second%20Largest/"/>
-    <url>/2021/11/05/Find%20Second%20Largest/</url>
-    
-    <content type="html"><![CDATA[<p>Java program to find second largest number in an array</p><p>public class Second_largest {<br>    public static void main(String args[])<br>    {<br>        int[] arr1={7,5,6,1,4,2};<br>        int secondHighest=findSecondLargestNumberInTheArray(arr1);<br>        System.out.println(“Second largest element in the array : “+ secondHighest);<br>    }</p><pre><code>public static int findSecondLargestNumberInTheArray(int array[])&#123;    int highest = 0;    int secondHighest = 0;    for (int i = 0; i &lt; array.length; i++) &#123;        if (array[i] &gt; highest) &#123;            secondHighest = highest;            highest = array[i];        &#125; else if (array[i] &gt; secondHighest &amp;&amp; array[i]!=highest)            // Just replace the second highest            secondHighest = array[i];    &#125;    // After exiting the loop, secondHighest now represents the second    // largest value in the array    return secondHighest;&#125;</code></pre><p>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Duplicate Character</title>
     <link href="/2021/11/05/Duplicate%20Character/"/>
     <url>/2021/11/05/Duplicate%20Character/</url>
@@ -204,11 +29,61 @@
   
   
   <entry>
-    <title>Strings anagram</title>
-    <link href="/2021/11/05/Strings%20Anagram/"/>
-    <url>/2021/11/05/Strings%20Anagram/</url>
+    <title>Sliding window</title>
+    <link href="/2021/11/03/Sliding%20window/"/>
+    <url>/2021/11/03/Sliding%20window/</url>
     
-    <content type="html"><![CDATA[<p><img src="/2021/11/05/Strings%20Anagram/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg"> </p><p>Question  Write a java program to check if two Strings are anagram in java?<br>Solution: Two string are anagrams if they have same characters but in different order. For example: Angel and Angle are anagrams<br>There are few ways to check if Strings are anagrams. Some of them are:</p><p>public class anagram_string {<br>    String a = “Angel”;<br>    String b = “Angle”;<br>    public void method1(){<br>        System.out.println(method_compare(a,b));<br>    }</p><p>public boolean method_compare(String a,String b){<br>        if (a.length() != b.length()){<br>            return false;<br>        }<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            char c = a.charAt(i);<br>            if (b.indexOf(c) != -1){<br>//                b = b.substring(0,b.indexOf(c)) + b.substring(b.indexOf(c)+1);<br>                b = b.replace(“c”,””);<br>            }<br>            else{<br>                return false;<br>            }<br>        }<br>        return true;<br>    }</p><p>public void method2(){<br>        System.out.println(compared(a,b));<br>    }<br>    public static boolean compared(String a, String b){<br>        String element1 = sorted(a);<br>        String element2 = sorted(b);<br>        if (element1.equals(element2)){<br>            return true;<br>        }<br>        return false;<br>    }<br>public static String sorted(String word){<br>        char[] arr = word.toCharArray();<br>        Arrays.sort(arr);<br>//        System.out.println(arr);<br>        return String.valueOf(arr);<br>    }</p><p>public static void main(String[] args) {<br>        anagram_string a = new anagram_string();<br>        a.method1();<br>//        String c = “abcdefg”;<br>//        System.out.println(c.substring(0,3));<br>        a.method2();<br>    }<br>}</p>]]></content>
+    <content type="html"><![CDATA[<p>Given an Array of integers and an Integer k, Find the maximum element of from all the contiguous subarrays of size K.</p><p>public class Slinding_K_3 {<br>    public static void main(String[] args) {<br>        int[] arr = {2,6,-1,2,4,1,-6,5};<br>        int k = 3;<br>        System.out.println(arr.length);<br>        for (int i = k; i &lt;= arr.length; i++) {<br>        int max = Integer.MIN_VALUE;<br>            for (int j = i-k; j &lt; i; j++) {<br>                max = Math.max(max,arr[j]);<br>            }<br>            System.out.print(max);<br>        }<br>    }<br>}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Easy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Permutation</title>
+    <link href="/2021/11/01/Permutation/"/>
+    <url>/2021/11/01/Permutation/</url>
+    
+    <content type="html"><![CDATA[<p>Write a program to print all permutations of String in java?<br>Solution: Take out first character of String and insert into different places of permutations of remaining String recursively. Please find complete solution at how to find all permutations of String in java.</p><p>public class permutation {</p><p>public static void main(String[] args) {</p><p>Set set=permutationOfString(“ABC”);        //ABC stores the set<br>System.out.println(“Permutations of String ABC are:”);<br>for (Iterator iterator = set.iterator(); iterator.hasNext();) {<br>    String string = (String) iterator.next();<br>    System.out.println(string);<br>    }<br>}</p><p>public static Set permutationOfString(String str)<br>{<br>    Set<String> permutationSet=new HashSet();<br>    if(str.length()==0)<br>    {<br>        permutationSet.add(“”);<br>        return permutationSet;<br>    }<br>    // take out first character of String<br>    char c=str.charAt(0);<br>    // Remaining String<br>    String rem=str.substring(1);<br>    Set<String> permutatedSetForRemainingString=permutationOfString(rem);<br>    for (String permutedString: permutatedSetForRemainingString) {<br>        for (int j = 0; j &lt;= permutedString.length(); j++) {<br>            String permutation=insertFirstCharAtDiffPlaces(permutedString,c,j);<br>            permutationSet.add(permutation);<br>        }</String></String></p><pre><code>&#125;return permutationSet;</code></pre><p>}<br>public static String insertFirstCharAtDiffPlaces(String perm,char firstChar,int index)<br>{<br>    // Inserting firstCharacter of orig String at difference places based on index<br>    return perm.substring(0,index)+firstChar+perm.substring(index);<br>}</p><p>}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Easy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Odd_Even_Occurances</title>
+    <link href="/2021/11/01/Odd%20Even%20Occurances/"/>
+    <url>/2021/11/01/Odd%20Even%20Occurances/</url>
+    
+    <content type="html"><![CDATA[<p>Separate odd and even numbers in an array<br>Given an array of integers, you need to segregate odd and even numbers in an array.<br>Please note: Order of elements can be changed.</p><p>ublic class Seperating {</p><p>public static void main(String[] args) {</p><p>int arr[]={12, 17, 70, 15, 22, 65, 21, 90};<br>arr=separateEvenOddNumbers(arr);<br>System.out.println(“nArray after separating even and odd numbers : “);<br>for (int i = 0; i &lt; arr.length; i++) {<br>    System.out.print(arr[i]+” “);<br>}<br>}</p><p>public static int[] separateEvenOddNumbers(int arr[])<br>{<br>    int left=0;<br>    int right=arr.length-1;<br>        while(arr[left]%2==0)<br>        {<br>            left++;<br>        }<br>        while(arr[right]%2==1)<br>        {<br>            right–;<br>        }</p><pre><code>if(left&lt;right)&#123;int temp=arr[left];arr[left]=arr[right];arr[right]=temp;&#125;return arr;&#125;&#125;</code></pre>]]></content>
     
     
     <categories>
@@ -230,8 +105,8 @@
   
   <entry>
     <title>Seperating Odd Even</title>
-    <link href="/2021/11/05/Seperating%20Odd%20Even/"/>
-    <url>/2021/11/05/Seperating%20Odd%20Even/</url>
+    <link href="/2021/10/25/Seperating%20Odd%20Even/"/>
+    <url>/2021/10/25/Seperating%20Odd%20Even/</url>
     
     <content type="html"><![CDATA[<p>Given an array of integers, you need to segregate odd and even numbers in an array.<br>Please note: Order of elements can be changed.</p><p>public class Seperating {</p><p>public static void main(String[] args) {</p><p>int arr[]={12, 17, 70, 15, 22, 65, 21, 90};<br>arr=separateEvenOddNumbers(arr);<br>System.out.println(“nArray after separating even and odd numbers : “);<br>for (int i = 0; i &lt; arr.length; i++) {<br>    System.out.print(arr[i]+” “);<br>}<br>}</p><p>public static int[] separateEvenOddNumbers(int arr[])<br>{<br>    int left=0;<br>    int right=arr.length-1;<br>        while(arr[left]%2==0)<br>        {<br>            left++;<br>        }<br>        while(arr[right]%2==1)<br>        {<br>            right–;<br>        }</p><pre><code>    if(left&lt;right)&#123;    int temp=arr[left];    arr[left]=arr[right];    arr[right]=temp;&#125;</code></pre><p>return arr;<br>}<br>}</p>]]></content>
     
@@ -254,11 +129,111 @@
   
   
   <entry>
-    <title>CharacterReplacement</title>
-    <link href="/2021/11/05/CharacterReplacement/"/>
-    <url>/2021/11/05/CharacterReplacement/</url>
+    <title>First None repeated Number</title>
+    <link href="/2021/10/21/First%20None%20repeated%20Number/"/>
+    <url>/2021/10/21/First%20None%20repeated%20Number/</url>
     
-    <content type="html"><![CDATA[<p>class CharacterReplacement {<br>    public static int findLength(String str, int k) {<br>        int windowStart = 0, maxLength = 0, maxRepeatLetterCount = 0;<br>        Map&lt;Character, Integer&gt; letterFrequencyMap = new HashMap&lt;&gt;();<br>        // try to extend the range [windowStart, windowEnd]<br>        for (int windowEnd = 0; windowEnd &lt; str.length(); windowEnd++) {<br>            char rightChar = str.charAt(windowEnd);<br>            letterFrequencyMap.put(rightChar, letterFrequencyMap.getOrDefault(rightChar, 0) + 1);<br>            maxRepeatLetterCount = Math.max(maxRepeatLetterCount, letterFrequencyMap.get(rightChar));</p><p>// current window size is from windowStart to windowEnd, overall we have a letter which is<br>// repeating ‘maxRepeatLetterCount’ times, this means we can have a window which has one letter<br>// repeating ‘maxRepeatLetterCount’ times and the remaining letters we should replace.<br>// if the remaining letters are more than ‘k’, it is the time to shrink the window as we<br>// are not allowed to replace more than ‘k’ letters<br>if (windowEnd - windowStart + 1 - maxRepeatLetterCount &gt; k) {<br>    char leftChar = str.charAt(windowStart);<br>    letterFrequencyMap.put(leftChar, letterFrequencyMap.get(leftChar) - 1);<br>    windowStart++;<br>}</p><p>maxLength = Math.max(maxLength, windowEnd - windowStart + 1);<br>}</p><p>return maxLength;<br>}</p><p>public static void main(String[] args) {<br>    System.out.println(CharacterReplacement.findLength(“aabccbb”, 2));<br>    System.out.println(CharacterReplacement.findLength(“abbcb”, 1));<br>    System.out.println(CharacterReplacement.findLength(“abccde”, 1));<br>    }<br>}</p>]]></content>
+    <content type="html"><![CDATA[<p>Find first non repeated character in String in java</p><p>public class first_none_repeatedchar {<br>    public static void main(String[] args) {<br>        String a = “easiest”;<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            Character c = a.charAt(i);<br>            if(a.indexOf(c) == a.lastIndexOf(c))<br>            {<br>                System.out.println(a.charAt(i));<br>                break;<br>            }<br>        }</p><pre><code>&#125;</code></pre><p>}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Easy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Find Second Largest</title>
+    <link href="/2021/10/15/Find%20Second%20Largest/"/>
+    <url>/2021/10/15/Find%20Second%20Largest/</url>
+    
+    <content type="html"><![CDATA[<p>Java program to find second largest number in an array</p><p>public class Second_largest {<br>    public static void main(String args[])<br>    {<br>        int[] arr1={7,5,6,1,4,2};<br>        int secondHighest=findSecondLargestNumberInTheArray(arr1);<br>        System.out.println(“Second largest element in the array : “+ secondHighest);<br>    }</p><pre><code>public static int findSecondLargestNumberInTheArray(int array[])&#123;    int highest = 0;    int secondHighest = 0;    for (int i = 0; i &lt; array.length; i++) &#123;        if (array[i] &gt; highest) &#123;            secondHighest = highest;            highest = array[i];        &#125; else if (array[i] &gt; secondHighest &amp;&amp; array[i]!=highest)            // Just replace the second highest            secondHighest = array[i];    &#125;    // After exiting the loop, secondHighest now represents the second    // largest value in the array    return secondHighest;&#125;</code></pre><p>}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Easy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Strings anagram</title>
+    <link href="/2021/10/15/Strings%20Anagram/"/>
+    <url>/2021/10/15/Strings%20Anagram/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2021/10/15/Strings%20Anagram/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg"> </p><p>Question  Write a java program to check if two Strings are anagram in java?<br>Solution: Two string are anagrams if they have same characters but in different order. For example: Angel and Angle are anagrams<br>There are few ways to check if Strings are anagrams. Some of them are:</p><p>public class anagram_string {<br>    String a = “Angel”;<br>    String b = “Angle”;<br>    public void method1(){<br>        System.out.println(method_compare(a,b));<br>    }</p><p>public boolean method_compare(String a,String b){<br>        if (a.length() != b.length()){<br>            return false;<br>        }<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            char c = a.charAt(i);<br>            if (b.indexOf(c) != -1){<br>//                b = b.substring(0,b.indexOf(c)) + b.substring(b.indexOf(c)+1);<br>                b = b.replace(“c”,””);<br>            }<br>            else{<br>                return false;<br>            }<br>        }<br>        return true;<br>    }</p><p>public void method2(){<br>        System.out.println(compared(a,b));<br>    }<br>    public static boolean compared(String a, String b){<br>        String element1 = sorted(a);<br>        String element2 = sorted(b);<br>        if (element1.equals(element2)){<br>            return true;<br>        }<br>        return false;<br>    }<br>public static String sorted(String word){<br>        char[] arr = word.toCharArray();<br>        Arrays.sort(arr);<br>//        System.out.println(arr);<br>        return String.valueOf(arr);<br>    }</p><p>public static void main(String[] args) {<br>        anagram_string a = new anagram_string();<br>        a.method1();<br>//        String c = “abcdefg”;<br>//        System.out.println(c.substring(0,3));<br>        a.method2();<br>    }<br>}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Easy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Train Station</title>
+    <link href="/2021/10/05/Train%20Station/"/>
+    <url>/2021/10/05/Train%20Station/</url>
+    
+    <content type="html"><![CDATA[<p>Find minimum number of platforms required for railway station<br>You are given arrival and departure time of trains reaching to a particular station. You need to find minimum number of platforms required to accommodate the trains at any point of time.</p><p>public class TrainStation {<br>    public static void main(String args[])<br>    {<br>        // arr[] = {1:00, 1:40, 1:50, 2:00, 2:15, 4:00}<br>        // dep[] = {1:10, 3:00, 2:20, 2:30, 3:15, 6:00}</p><p>int arr[] = {100, 140, 150, 200, 215, 400};<br>int dep[] = {110, 300, 210, 230,315, 600};<br>System.out.println(“Minimum platforms needed:”+findPlatformsRequiredForStation(arr,dep,6));<br>}</p><p>static int findPlatformsRequiredForStation(int arr[], int dep[], int n)<br>{<br>    int platform_needed = 0, maxPlatforms = 0;<br>    Arrays.sort(arr);<br>    Arrays.sort(dep);<br>    int i = 0, j = 0;</p><p>// Similar to merge in merge sort<br>while (i &lt; n &amp;&amp; j &lt; n)<br>{<br>    if (arr[i] &lt; dep[j])<br>    {<br>        platform_needed++;<br>        i++;<br>        if (platform_needed &gt; maxPlatforms)<br>            maxPlatforms = platform_needed;<br>    }<br>    else<br>    {<br>        platform_needed–;<br>        j++;<br>    }<br>}<br>return maxPlatforms;<br>}<br>}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Easy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Close to given number</title>
+    <link href="/2021/10/02/Close%20to%20given%20number/"/>
+    <url>/2021/10/02/Close%20to%20given%20number/</url>
+    
+    <content type="html"><![CDATA[<p>Given a sorted array and a number x, find the pair in array whose sum is closest to x</p><p>public class close_to_given_num {<br>    public static void main(String[] args) {<br>//        close_to_given_num.method1();<br>        close_to_given_num.method2();<br>    }<br>    public static void method1(){<br>        int[] arr = {-40,-5,1,3,6,7,8,20};<br>        int left = 0, right = arr.length -1 , target = 5, min= arr[0] + arr[1] ;<br>        int diff = Math.abs(target - min), position_left =0, position_right = 0;<br>        while(left &lt; right){<br>            int cur = arr[left] + arr[right];<br>            if(diff &gt; Math.abs(target - cur)){<br>                position_left = left;<br>                position_right = right;<br>                diff = Math.abs(target-cur);<br>            }<br>            if (cur&lt;0){<br>                left ++;<br>            }else{<br>                right –;<br>            }</p><p>}<br>System.out.println(“The position of left: “ + arr[position_left] +<br>        “the position of right: “+arr[position_right] + “is close to the “ + target);</p><p>}<br>public static void method2(){<br>    int[] arr = {-40,-5,1,3,6,7,8,20};<br>    int left = 0, right = arr.length -1 , target = 15;<br>    ArrayList&lt;List<Integer>&gt; ls = new ArrayList&lt;&gt;();<br>    ArrayList<Integer> singleList = new ArrayList<Integer>();</Integer></Integer></Integer></p><p>while(left &lt; right){<br>    int cur = arr[left] + arr[right];<br>    if(cur == target){<br>        singleList.add(arr[left]);<br>        singleList.add(arr[right]);<br>        ls.add(singleList);<br>        left ++;<br>        right –;<br>    }</p><pre><code>else if(cur&lt;target)&#123;    left ++;&#125;else&#123;    right --;&#125;</code></pre><p>}<br>for(List<Integer> i:ls){<br>System.out.println(i);</Integer></p><p>}</p><p>}<br>}</p>]]></content>
     
     
     <categories>
@@ -284,6 +259,31 @@
     <url>/2021/09/08/Count%20number%20of%20occurrences/</url>
     
     <content type="html"><![CDATA[<p>Count number of occurrences (or frequency) of each element in a sorted array<br>Given a Sorted Array of integers containing duplicates. Find the frequency of every unique element present in the array.<br>Frequency is defined as the number of occurrence of any element in the array.</p><p>public class count_occurance {<br>    public static void main(String[] args) {<br>        int[] arr = {1, 1, 1, 3, 3, 4, 5, 5, 6, 6};<br>        HashMap&lt;Integer, Integer&gt; occ = new HashMap&lt;&gt;();<br>        for (int i = 0; i &lt; arr.length; i++) {<br>            if(!occ.containsKey(arr[i])){<br>                occ.put(arr[i],1);<br>            }else{<br>                occ.put(arr[i],occ.getOrDefault(arr[i],0)  + 1);<br>            }<br>        }<br>        for (int j : occ.keySet()) {<br>            System.out.println(“Frequence of “+ j + “ is : “ + occ.get(j));<br>        }<br>    }<br>}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Easy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CharacterReplacement</title>
+    <link href="/2021/08/14/CharacterReplacement/"/>
+    <url>/2021/08/14/CharacterReplacement/</url>
+    
+    <content type="html"><![CDATA[<p>class CharacterReplacement {<br>    public static int findLength(String str, int k) {<br>        int windowStart = 0, maxLength = 0, maxRepeatLetterCount = 0;<br>        Map&lt;Character, Integer&gt; letterFrequencyMap = new HashMap&lt;&gt;();<br>        // try to extend the range [windowStart, windowEnd]<br>        for (int windowEnd = 0; windowEnd &lt; str.length(); windowEnd++) {<br>            char rightChar = str.charAt(windowEnd);<br>            letterFrequencyMap.put(rightChar, letterFrequencyMap.getOrDefault(rightChar, 0) + 1);<br>            maxRepeatLetterCount = Math.max(maxRepeatLetterCount, letterFrequencyMap.get(rightChar));</p><p>// current window size is from windowStart to windowEnd, overall we have a letter which is<br>// repeating ‘maxRepeatLetterCount’ times, this means we can have a window which has one letter<br>// repeating ‘maxRepeatLetterCount’ times and the remaining letters we should replace.<br>// if the remaining letters are more than ‘k’, it is the time to shrink the window as we<br>// are not allowed to replace more than ‘k’ letters<br>if (windowEnd - windowStart + 1 - maxRepeatLetterCount &gt; k) {<br>    char leftChar = str.charAt(windowStart);<br>    letterFrequencyMap.put(leftChar, letterFrequencyMap.get(leftChar) - 1);<br>    windowStart++;<br>}</p><p>maxLength = Math.max(maxLength, windowEnd - windowStart + 1);<br>}</p><p>return maxLength;<br>}</p><p>public static void main(String[] args) {<br>    System.out.println(CharacterReplacement.findLength(“aabccbb”, 2));<br>    System.out.println(CharacterReplacement.findLength(“abbcb”, 1));<br>    System.out.println(CharacterReplacement.findLength(“abccde”, 1));<br>    }<br>}</p>]]></content>
     
     
     <categories>

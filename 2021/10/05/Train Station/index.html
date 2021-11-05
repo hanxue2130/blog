@@ -16,19 +16,19 @@
   <meta name="description" content="Coding, Swimming, Reading and Enjoying">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta name="description" content="Separate odd and even numbers in an arrayGiven an array of integers, you need to segregate odd and even numbers in an array.Please note: Order of elements can be changed. ublic class Seperating { publ">
+  <meta name="description" content="Find minimum number of platforms required for railway stationYou are given arrival and departure time of trains reaching to a particular station. You need to find minimum number of platforms required">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Odd_Even_Occurances">
-<meta property="og:url" content="https://hanxue2130.github.io/2021/11/05/Odd%20Even%20Occurances/index.html">
+<meta property="og:title" content="Train Station">
+<meta property="og:url" content="https://hanxue2130.github.io/2021/10/05/Train%20Station/index.html">
 <meta property="og:site_name" content="Chen&#39;s blog">
-<meta property="og:description" content="Separate odd and even numbers in an arrayGiven an array of integers, you need to segregate odd and even numbers in an array.Please note: Order of elements can be changed. ublic class Seperating { publ">
+<meta property="og:description" content="Find minimum number of platforms required for railway stationYou are given arrival and departure time of trains reaching to a particular station. You need to find minimum number of platforms required">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-05T10:11:19.000Z">
-<meta property="article:modified_time" content="2021-11-05T10:15:24.372Z">
+<meta property="article:published_time" content="2021-10-05T05:12:13.000Z">
+<meta property="article:modified_time" content="2021-11-05T11:35:02.085Z">
 <meta property="article:tag" content="Easy">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Odd_Even_Occurances - Chen&#39;s blog</title>
+  <title>Train Station - Chen&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Odd_Even_Occurances">
+            <span class="h2" id="subtitle" title="Train Station">
               
             </span>
 
@@ -184,8 +184,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-05 21:11" pubdate>
-        November 5, 2021 pm
+      <time datetime="2021-10-05 16:12" pubdate>
+        October 5, 2021 pm
       </time>
     </span>
   
@@ -195,7 +195,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      637 words
+      865 words
     </span>
   
 
@@ -204,7 +204,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 minutes
+      3 minutes
     </span>
   
 
@@ -241,25 +241,14 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Odd_Even_Occurances</h1>
+            <h1 style="display: none">Train Station</h1>
             
             <div class="markdown-body">
-              <p>Separate odd and even numbers in an array<br>Given an array of integers, you need to segregate odd and even numbers in an array.<br>Please note: Order of elements can be changed.</p>
-<p>ublic class Seperating {</p>
-<p>public static void main(String[] args) {</p>
-<p>int arr[]={12, 17, 70, 15, 22, 65, 21, 90};<br>arr=separateEvenOddNumbers(arr);<br>System.out.println(“nArray after separating even and odd numbers : “);<br>for (int i = 0; i &lt; arr.length; i++) {<br>    System.out.print(arr[i]+” “);<br>}<br>}</p>
-<p>public static int[] separateEvenOddNumbers(int arr[])<br>{<br>    int left=0;<br>    int right=arr.length-1;<br>        while(arr[left]%2==0)<br>        {<br>            left++;<br>        }<br>        while(arr[right]%2==1)<br>        {<br>            right–;<br>        }</p>
-<pre><code>if(left&lt;right)
-&#123;
-int temp=arr[left];
-arr[left]=arr[right];
-arr[right]=temp;
-&#125;
-
-return arr;
-&#125;
-&#125;
-</code></pre>
+              <p>Find minimum number of platforms required for railway station<br>You are given arrival and departure time of trains reaching to a particular station. You need to find minimum number of platforms required to accommodate the trains at any point of time.</p>
+<p>public class TrainStation {<br>    public static void main(String args[])<br>    {<br>        // arr[] = {1:00, 1:40, 1:50, 2:00, 2:15, 4:00}<br>        // dep[] = {1:10, 3:00, 2:20, 2:30, 3:15, 6:00}</p>
+<p>int arr[] = {100, 140, 150, 200, 215, 400};<br>int dep[] = {110, 300, 210, 230,315, 600};<br>System.out.println(“Minimum platforms needed:”+findPlatformsRequiredForStation(arr,dep,6));<br>}</p>
+<p>static int findPlatformsRequiredForStation(int arr[], int dep[], int n)<br>{<br>    int platform_needed = 0, maxPlatforms = 0;<br>    Arrays.sort(arr);<br>    Arrays.sort(dep);<br>    int i = 0, j = 0;</p>
+<p>// Similar to merge in merge sort<br>while (i &lt; n &amp;&amp; j &lt; n)<br>{<br>    if (arr[i] &lt; dep[j])<br>    {<br>        platform_needed++;<br>        i++;<br>        if (platform_needed &gt; maxPlatforms)<br>            maxPlatforms = platform_needed;<br>    }<br>    else<br>    {<br>        platform_needed–;<br>        j++;<br>    }<br>}<br>return maxPlatforms;<br>}<br>}</p>
 
             </div>
             <hr>
@@ -288,9 +277,9 @@ return arr;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/05/Permutation/">
+                      <a href="/2021/10/15/Strings%20Anagram/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Permutation</span>
+                        <span class="hidden-mobile">Strings anagram</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -298,8 +287,8 @@ return arr;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/05/Find%20Second%20Largest/">
-                        <span class="hidden-mobile">Find Second Largest</span>
+                      <a href="/2021/10/02/Close%20to%20given%20number/">
+                        <span class="hidden-mobile">Close to given number</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

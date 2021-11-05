@@ -16,19 +16,37 @@
   <meta name="description" content="Coding, Swimming, Reading and Enjoying">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta name="description" content="Coding, Swimming, Reading and Enjoying">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta property="og:url" content="https://hanxue2130.github.io/archives/2021/11/page/2/index.html">
+  <meta name="description" content="Find first non repeated character in String in java public class first_none_repeatedchar {    public static void main(String[] args) {        String a &#x3D; “easiest”;        for (int i &#x3D; 0; i &lt; a.leng">
+<meta property="og:type" content="article">
+<meta property="og:title" content="First None repeated Number">
+<meta property="og:url" content="https://hanxue2130.github.io/2021/10/21/First%20None%20repeated%20Number/index.html">
 <meta property="og:site_name" content="Chen&#39;s blog">
-<meta property="og:description" content="Coding, Swimming, Reading and Enjoying">
+<meta property="og:description" content="Find first non repeated character in String in java public class first_none_repeatedchar {    public static void main(String[] args) {        String a &#x3D; “easiest”;        for (int i &#x3D; 0; i &lt; a.leng">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-21T12:11:39.000Z">
+<meta property="article:modified_time" content="2021-11-05T11:36:13.478Z">
+<meta property="article:tag" content="Easy">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Archives - Chen&#39;s blog</title>
+  <title>First None repeated Number - Chen&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -55,7 +73,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -156,9 +174,51 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Archive">
+            <span class="h2" id="subtitle" title="First None repeated Number">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-21 23:11" pubdate>
+        October 21, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      268 words
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1 minutes
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -171,46 +231,93 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">13 posts in total.</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/11/05/CharacterReplacement/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">CharacterReplacement</span>
-      <time style="float: right;">11-05</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">First None repeated Number</h1>
+            
+            <div class="markdown-body">
+              <p>Find first non repeated character in String in java</p>
+<p>public class first_none_repeatedchar {<br>    public static void main(String[] args) {<br>        String a = “easiest”;<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            Character c = a.charAt(i);<br>            if(a.indexOf(c) == a.lastIndexOf(c))<br>            {<br>                System.out.println(a.charAt(i));<br>                break;<br>            }<br>        }</p>
+<pre><code>&#125;
+</code></pre>
+<p>}</p>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2021/11/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2021/11/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Algorithm/">Algorithm</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Easy/">Easy</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/25/Seperating%20Odd%20Even/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Seperating Odd Even</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/15/Find%20Second%20Largest/">
+                        <span class="hidden-mobile">Find Second Largest</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -293,6 +400,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
