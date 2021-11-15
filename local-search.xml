@@ -4,311 +4,62 @@
   
   
   <entry>
-    <title>Duplicate Character</title>
-    <link href="/2021/11/05/Duplicate%20Character/"/>
-    <url>/2021/11/05/Duplicate%20Character/</url>
+    <title>Array_Question</title>
+    <link href="/2021/11/15/Array_Question/"/>
+    <url>/2021/11/15/Array_Question/</url>
     
-    <content type="html"><![CDATA[<p>public class duplicate_charater {<br>public static void main(String[] args) {<br>    String str = “java2blog.com “;<br>    HashMap&lt;Character,Integer&gt; charCountMap = new HashMap();<br>    for (int i = 0; i &lt; str.length(); i++) {<br>        char c = str.charAt(i);</p><p>if (charCountMap.containsKey(c)) {<br>    charCountMap.put(c, charCountMap.get(c) + 1);<br>} else {<br>    charCountMap.put(c, 1);<br>}</p><p>}<br>for (Character c : charCountMap.keySet()) {<br>    if (charCountMap.get(c) &gt; 1)<br>        System.out.println(“duplicate character : “ + c + “ ====== “ + “ count : “ + charCountMap.get(c));</p><p>}</p><p>}<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
+    <content type="html"><![CDATA[<h1 id="1-close-to-a-given-number"><a href="#1-close-to-a-given-number" class="headerlink" title="1 close to a given number"></a>1 close to a given number</h1><pre><code>public static void main(String[] args) &#123;</code></pre><p>//        close_to_given_num.method1();<br>        close_to_given_num.method2();<br>    }<br>    public static void method1(){<br>        int[] arr = {-40,-5,1,3,6,7,8,20};<br>        int left = 0, right = arr.length -1 , target = 5, min= arr[0] + arr[1] ;<br>        int diff = Math.abs(target - min), position_left =0, position_right = 0;<br>        while(left &lt; right){<br>            int cur = arr[left] + arr[right];<br>            if(diff &gt; Math.abs(target - cur)){<br>                position_left = left;<br>                position_right = right;<br>                diff = Math.abs(target-cur);<br>            }<br>            if (cur&lt;0){<br>                left ++;<br>            }else{<br>                right –;<br>            }<br>        }<br>        System.out.println(“The position of left: “ + arr[position_left] +<br>                “the position of right: “+arr[position_right] + “is close to the “ + target);<br>    }<br>    public static void method2(){<br>        int[] arr = {-40,-5,1,3,6,7,8,20};<br>        int left = 0, right = arr.length -1 , target = 15;<br>        ArrayList&lt;List<Integer>&gt; ls = new ArrayList&lt;&gt;();<br>        ArrayList<Integer> singleList = new ArrayList<Integer>();<br>        while(left &lt; right){<br>            int cur = arr[left] + arr[right];<br>            if(cur == target){<br>                singleList.add(arr[left]);<br>                singleList.add(arr[right]);<br>                ls.add(singleList);<br>                left ++;<br>                right –;<br>            }<br>            else if(cur&lt;target){<br>                left ++;<br>            }else{<br>                right –;<br>            }<br>        }<br>        for(List<Integer> i:ls){<br>        System.out.println(i);<br>    }<br>}</Integer></Integer></Integer></Integer></p><h1 id="2-count-occurance-of-an-array"><a href="#2-count-occurance-of-an-array" class="headerlink" title="2. count occurance of an array"></a>2. count occurance of an array</h1><p>  int[] arr = {1, 1, 1, 3, 3, 4, 5, 5, 6, 6};<br>        HashMap&lt;Integer, Integer&gt; occ = new HashMap&lt;&gt;();<br>        for (int i = 0; i &lt; arr.length; i++) {<br>            if(!occ.containsKey(arr[i])){<br>                occ.put(arr[i],1);<br>            }else{<br>                occ.put(arr[i],occ.getOrDefault(arr[i],0)  + 1);<br>            }<br>        }<br>        for (int j : occ.keySet()) {<br>            System.out.println(“Frequence of “+ j + “ is : “ + occ.get(j));<br>        }<br>    }</p><h1 id="3-find-the-largest-number-in-an-array"><a href="#3-find-the-largest-number-in-an-array" class="headerlink" title="3 find the largest number in an array"></a>3 find the largest number in an array</h1><p>   public static void main(String[] args) {<br>        int arr[] = new int[]{12,56,76,89,100,343,21,234};<br>        int largest = arr[0];<br>        int smallest = arr[0];<br>        for (int i = 0; i &lt; arr.length; i++) {<br>            if(arr[i]&gt;largest){<br>                largest = arr[i];<br>            }<br>        }<br>        System.out.println(largest);<br>    }</p><h1 id="4-Fizz-buzz"><a href="#4-Fizz-buzz" class="headerlink" title="4 Fizz buzz"></a>4 Fizz buzz</h1><p>   public static void main(String[] args) {<br>        ArrayList<Integer> q = new ArrayList&lt;&gt;();<br>        for (int i = 0; i &lt; 16; i++) {<br>            q.add(i);<br>        }<br>        ArrayList<String> result = new ArrayList&lt;&gt;();<br>        for (int i = 0; i &lt; q.size(); i++) {<br>            if(q.get(i) % 3 == 0 &amp;&amp; q.get(i) % 5 == 0){<br>                result.add(“fizz buzz”);<br>            }<br>            else if (q.get(i) % 3 == 0){<br>                result.add(“fizz”);<br>            }<br>            else if (q.get(i) % 5 == 0){<br>                result.add(“buzz”);<br>            }<br>            else {<br>                result.add(q.get(i).toString());<br>            }<br>        }<br>        for (int i = 1; i &lt; result.size(); i++) {<br>            System.out.println(result.get(i));<br>        }<br>    }</String></Integer></p><h1 id="5-missing-number-of-an-array"><a href="#5-missing-number-of-an-array" class="headerlink" title="5 missing number of an array"></a>5 missing number of an array</h1><p>   public static void main(String[] args) {<br>        int[] arr1={7,5,6,1,4,2};<br>        int[] arr2={5,3,1,2};<br>        int num = arr2.length + 1;<br>        int sum = num * ( num + 1 ) / 2;<br>        int result = sum;<br>        for (int i = 0; i &lt; arr2.length; i++) {<br>            result -= arr2[i];<br>            System.out.println(result);<br>        }</p><p>//        System.out.println(result);<br>    }</p><h1 id="6-find-odd-occurance"><a href="#6-find-odd-occurance" class="headerlink" title="6 find odd occurance"></a>6 find odd occurance</h1><p>   public static boolean method1(int num){<br>        if (num % 2 == 0){<br>            return false;<br>        }<br>        return true;<br>    }<br>   public static void main(String[] args) {<br>        int array[] = new int[]{20, 40, 50, 40, 50, 20, 30, 30, 50, 20, 40, 40, 20};<br>        HashMap&lt;Integer,Integer&gt; hs = new HashMap&lt;Integer,Integer&gt;();<br>        for (int i = 0; i &lt; array.length; i++) {<br>            if(!hs.containsKey(array[i]))<br>            {<br>                hs.put(array[i],1);<br>            }<br>            else{<br>                hs.put(array[i],hs.getOrDefault(array[i],0) + 1 );<br>            }<br>        }<br>        for(int j:hs.keySet()){<br>            if(method1(hs.get(j))) {<br>                System.out.println(j + “the frequence of it “ + hs.get(j));<br>            }<br>        }<br>       }<br>   }</p><h1 id="7-Rail-station-problems"><a href="#7-Rail-station-problems" class="headerlink" title="7 Rail station problems"></a>7 Rail station problems</h1><p>   public static void main(String[] args) {<br>        int platform_needed = 0,max_platform =0;<br>        int arr[] = {100, 140, 150, 200, 215, 400};<br>        int dep[] = {110, 300, 210, 230,315, 600};<br>        int i=0,j=0,n=6;<br>        Arrays.sort(arr);<br>        Arrays.sort(dep);<br>        while(i &lt; n &amp;&amp; j &lt; n){<br>            if(arr[i] &lt; dep[j])<br>            {<br>                platform_needed ++;<br>                i ++;<br>                if (platform_needed &gt; max_platform)<br>                    max_platform = platform_needed;<br>                System.out.println(platform_needed);<br>            }<br>            else{<br>                platform_needed –;<br>                j ++;<br>            }<br>        }<br>        System.out.println(max_platform);</p><pre><code>&#125;</code></pre><p>#8 Second largest<br>    public static void main(String args[])<br>    {<br>        int[] arr1={7,5,6,1,4,2};<br>        int secondHighest=findSecondLargestNumberInTheArray(arr1);<br>        System.out.println(“Second largest element in the array : “+ secondHighest);<br>    }<br>    public static int findSecondLargestNumberInTheArray(int array[])<br>    {<br>        int highest = 0;<br>        int secondHighest = 0;<br>        for (int i = 0; i &lt; array.length; i++) {<br>            if (array[i] &gt; highest) {<br>                secondHighest = highest;<br>                highest = array[i];<br>            } else if (array[i] &gt; secondHighest &amp;&amp; array[i]!=highest)<br>                // Just replace the second highest<br>                secondHighest = array[i];<br>        }<br>        // After exiting the loop, secondHighest now represents the second<br>        // largest value in the array<br>        return secondHighest;<br>    }</p>]]></content>
     
     
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>Sliding window</title>
-    <link href="/2021/11/03/Sliding%20window/"/>
-    <url>/2021/11/03/Sliding%20window/</url>
+    <title>Project1</title>
+    <link href="/2021/11/08/project1/"/>
+    <url>/2021/11/08/project1/</url>
     
-    <content type="html"><![CDATA[<p>Given an Array of integers and an Integer k, Find the maximum element of from all the contiguous subarrays of size K.</p><p>public class Slinding_K_3 {<br>    public static void main(String[] args) {<br>        int[] arr = {2,6,-1,2,4,1,-6,5};<br>        int k = 3;<br>        System.out.println(arr.length);<br>        for (int i = k; i &lt;= arr.length; i++) {<br>        int max = Integer.MIN_VALUE;<br>            for (int j = i-k; j &lt; i; j++) {<br>                max = Math.max(max,arr[j]);<br>            }<br>            System.out.print(max);<br>        }<br>    }<br>}</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="This-is-one-of-the-projects-I-participated-in-coding-and-deisgn-The-project-is-bascially-a-Travel-Website-design-in-Java-Javascript-HTML-CSS-and-son-on-with-the-function-of-Registration-Login-Mail-validation-travel-route-Tour-details-display-Favorite-travel-route-based-on-mysql-database"><a href="#This-is-one-of-the-projects-I-participated-in-coding-and-deisgn-The-project-is-bascially-a-Travel-Website-design-in-Java-Javascript-HTML-CSS-and-son-on-with-the-function-of-Registration-Login-Mail-validation-travel-route-Tour-details-display-Favorite-travel-route-based-on-mysql-database" class="headerlink" title="This is one of the projects I participated in coding and deisgn. The project is bascially a Travel Website design in Java, Javascript, HTML, CSS and son on, with the function of Registration, Login, Mail validation, travel route,Tour details display, Favorite travel route based on mysql database."></a>This is one of the projects I participated in coding and deisgn. The project is bascially a Travel Website design in Java, Javascript, HTML, CSS and son on, with the function of Registration, Login, Mail validation, travel route,Tour details display, Favorite travel route based on mysql database.</h1><p>Technology selectives in details:<br>Front-end : HTML、CSS、JS、JQuery、Ajax, Servelet, Filter , BeanUtils, Jackson<br>Service: JavaMail, Redis, Jedis<br>Dao:Druid, JDBCutils, JDBCtemplate, Mysql<br><img src="/2021/11/08/project1/database_structure.png"></p><h2 id="The-following-I-list-is-some-of-specific-parts-that-I-am-involved-and-I-felt-tricky"><a href="#The-following-I-list-is-some-of-specific-parts-that-I-am-involved-and-I-felt-tricky" class="headerlink" title="The following I list is some of specific parts that I am involved and I felt tricky."></a>The following I list is some of specific parts that I am involved and I felt tricky.</h2><h2 id="First-Front-end-Design"><a href="#First-Front-end-Design" class="headerlink" title="First Front-end Design"></a>First Front-end Design</h2><ol><li>[Send asynchronous request]<br>![]validationcode.png<br>//The verification is passed, ajax sends the request, and the form data is submitted $(“#registerForm”).serialize()</li></ol><p>$.post(“registerUserServlet”,$(this).serialize(),function (data) {<br>    if(data.flag){<br>        //Registration is successful, jump to the successful page<br>        location.href= “register_ok.html”;<br>    }else{<br>        //If there is an error, you need to request the verification code servlet again, otherwise it will cause the verification code in the session to disappear. Although the picture exists, the code is no longer here.</p><p>//document.getElementById(“check_img”).src= “checkCode?”+new Date().getTime();<br>        //Registration failed, add prompt information to errormsg<br>        $(“#error_msg”).html(data.errorMsg);<br>    }<br>})</p><ol start="2"><li>[Verify mobile phone number format]<br>var reg_telephone = /^1(3|4|5|7|8)\d{9}$/;</li><li>[Verify mailbox format]<br>var reg_email = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/;</li><li>[Loss of focus event]<br>$(“#username”).blur(checkUsername);</li><li>[Front-end and back-end interaction]<br>When it comes to [front-end and back-end interaction], encapsulating information as an object.<br>public class ResultInfo implements Serializable {<br> private boolean flag; //The result returned by the backend is normally true, and false is returned if an exception occurs<br> private Object data;  //The backend returns the result data object<br> private String errorMsg; //An abnormal error message<br>}</li></ol><ol start="6"><li>[jackson]<br>import com.fasterxml.jackson.databind.ObjectMapper; //Serialize the info object to json and return to the client<br>ObjectMapper mapper = new ObjectMapper();<br>String json = mapper.writeValueAsString(info);//Write the json data back to the client side //Set content-type<br>response.setContentType(“application/json;charset=utf-8”);<br>response.getWriter().write(json);</li></ol><ol start="7"><li><p>[checkbox]<br>When the value attribute is not specified, the passed value is on! ! !</p></li><li><p>[Get the splicing parameters in the url]<br>//Acquire the corresponding value according to the passed parameter name<br>function getParameter(name) {<br> var reg = new RegExp(“(^|&amp;)” + name + “=([^&amp;]*)(&amp;|$)”,”i”);<br> var r = location.search.substr(1).match(reg);<br> if (r!=null) return (r[2]); return null;<br>}</p></li></ol><h2 id="Second-the-use-of-tools"><a href="#Second-the-use-of-tools" class="headerlink" title="Second, the use of tools"></a>Second, the use of tools</h2><p>Use [MailUtils] to complete the email sending, but you have to apply to open the service in the email settings.<br>Use [uuid tools] to complete the generation of random activation codes.<br>Use [JedisUtils] to complete the acquisition of the redis client to operate the redis database.<br>Use [JDBCUtils] to encapsulate the druid connection pool and return the data source object.<br><img src="/2021/11/08/project1/jdbc.png"></p><h2 id="Third-servelet-distribution-ideas"><a href="#Third-servelet-distribution-ideas" class="headerlink" title="Third, servelet distribution ideas"></a>Third, servelet distribution ideas</h2><p>Refer to the service method of HttpServlet to distribute the request method, corresponding to different methods, completing different functions similar to Servlet, which really benefited a lot. Looking back and thinking about the original need to define so many and so many Servlets, now they are completely encapsulated. In a UserServlet, great.</p><p>[Distribute Servlet]<br><img src="/2021/11/08/project1/Base_Servlet.png"></p><h2 id="Fourth-the-function-of-the-header-loading-data-from-mysql"><a href="#Fourth-the-function-of-the-header-loading-data-from-mysql" class="headerlink" title="Fourth, the function of the header loading data from mysql"></a>Fourth, the function of the header loading data from mysql</h2><p><img src="/2021/11/08/project1/Category1.png"></p><p>The DAO layer is shown below, using the JDBC template loading data from my database and then update to service layer.<br><img src="/2021/11/08/project1/2.png"></p><p>In the service layer, data is using the jedis in order to reduce the traffic volume and return in a list to servlet layer.<br><img src="/2021/11/08/project1/3.png"></p><p>The will be wrapped in the function as Json and interact with the html.<br><img src="/2021/11/08/project1/4.png"></p><p>And the front page will load the data from database.<br><img src="/2021/11/08/project1/5.png"></p>]]></content>
     
     
     <categories>
       
-      <category>Algorithm</category>
+      <category>Project</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>Permutation</title>
-    <link href="/2021/11/01/Permutation/"/>
-    <url>/2021/11/01/Permutation/</url>
+    <title>5G Introduction</title>
+    <link href="/2021/11/06/5G/"/>
+    <url>/2021/11/06/5G/</url>
     
-    <content type="html"><![CDATA[<p>Write a program to print all permutations of String in java?<br>Solution: Take out first character of String and insert into different places of permutations of remaining String recursively. Please find complete solution at how to find all permutations of String in java.</p><p>public class permutation {</p><p>public static void main(String[] args) {</p><p>Set set=permutationOfString(“ABC”);        //ABC stores the set<br>System.out.println(“Permutations of String ABC are:”);<br>for (Iterator iterator = set.iterator(); iterator.hasNext();) {<br>    String string = (String) iterator.next();<br>    System.out.println(string);<br>    }<br>}</p><p>public static Set permutationOfString(String str)<br>{<br>    Set<String> permutationSet=new HashSet();<br>    if(str.length()==0)<br>    {<br>        permutationSet.add(“”);<br>        return permutationSet;<br>    }<br>    // take out first character of String<br>    char c=str.charAt(0);<br>    // Remaining String<br>    String rem=str.substring(1);<br>    Set<String> permutatedSetForRemainingString=permutationOfString(rem);<br>    for (String permutedString: permutatedSetForRemainingString) {<br>        for (int j = 0; j &lt;= permutedString.length(); j++) {<br>            String permutation=insertFirstCharAtDiffPlaces(permutedString,c,j);<br>            permutationSet.add(permutation);<br>        }</String></String></p><pre><code>&#125;return permutationSet;</code></pre><p>}<br>public static String insertFirstCharAtDiffPlaces(String perm,char firstChar,int index)<br>{<br>    // Inserting firstCharacter of orig String at difference places based on index<br>    return perm.substring(0,index)+firstChar+perm.substring(index);<br>}</p><p>}</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="What-is-5G"><a href="#What-is-5G" class="headerlink" title="What is 5G?"></a>What is 5G?</h1><p>As we know, 5G has almost nothing to do with classic mobile communications unlike previous technologies such as 4G, there is no strandard 5G network. It is not just an evolution of previous technologies; it is a whole set of new networks accompany with the development of software.The description about might make the whole topic a bit confusing, but the prospects for the 5G standard are good. The maximum speed of up to 20 GB/s, minimized signal propagation time (delay), and many simultaneous mobile devices in each area make all wireless experiences look instantaneous and open the door to new applications. For some of us, nothing will change except for faster video streaming and a more realistic gaming experience, but in the meantime, unidentified use cases are being developed.</p><p>So, what is 5G? In order to take advantage of this technology, what do designers and engineers need to know?</p><p>5G standardization process<br>5G is a general term covering various networks, technologies and applications. It is the standardization of mobile communications. The name 5G was created by the International Telecommunication Union (ITU) as the “fifth generation mobile communication system.” To this end, the standardization organization Third Generation Partnership Project (3GPP) is advancing its 5G implementation through the International Mobile Telecommunications (IMT-2020) program. At the same time, other standardization bodies, including the Institute of Electrical and Electronics Engineers (IEEE) and the International Telecommunication Union, are working on 5G specifications. At the end of 2019, the standardization process was completed, and we are now seeing more and more applications being commercialized.</p><p>Different applications require different antennas</p><p>New communication standards involve many applications, and 5G mobile communication has multiple frequency ranges to consider. Generally, 5G mobile networks can operate at various frequencies, so different antennas need to be used for different frequency bands.<br>5G infographic, 5G applications allocated along the radio wave spectrum<br>5G frequency, range and applications<br>The situation becomes clearer when we pick some 5G frequency bands from the so-called multi-layer spectrum and align them with the application.</p><p>Coverage area: Less than 2 GHz (eg 700 MHz) is suitable for indoor and wider coverage areas, because electromagnetic waves of this wavelength can travel long distances and pass through objects.</p><p>C-Band: 2-6 GHz combines coverage, capacity and the so-called “super data layer”. Frequencies greater than 6 GHz (for example, 24-29 GHz and 37-43 GHz) provide high bandwidth, but require a direct line of sight because even the leaves on the tree can block connections.</p><p>Since various frequencies are used to transmit signals for different applications, special antennas and antenna concepts are required. Therefore, the change in the frequency band used for communication is one of the reasons why we see more antennas. The particularity of New Radio (NR) and the need for signal line-of-sight is another reason why we see more antennas.</p><p>5G NR works differently from 4G</p><p>As the demand for frequencies continues to grow, federal communications agencies (such as the FCC in the United States) are reallocating free or idle frequency ranges. Through re-framing, the frequencies that have been allocated for 5G have been licensed for operation. Therefore, network operators can freely decide which mobile communication technology they want to use.<br>After the expiration of the UMTS frequencies in the 2 GHz band at the end of 2020 and 2025, these frequencies will be allowed to be allocated to 5G from 2021 to 2026 (60 MHz in total).<br>Worldwide, WiMax technology has left an unused 3.5 GHz frequency band. Therefore, by 2022, the 3.6 GHz band will provide a bandwidth of 300 MHz, and the frequency range will be between 3.7 and 3.8 GHz.<br>NR uses the mmWave range (millimeter wave), which starts at 24 GHz and extends to 52.6 GHz. Parts in the 64 to 86 GHz range may be added in the future.<br>However, due to the physical propagation conditions of radio signals, most frequencies used for 5G (3.5 GHz, 26 GHz and above) are only suitable for short distances. However, these frequency ranges have high bandwidth potential. Low-power base stations called femtocells can be used to operate mobile radio hotspots at very high data rates. This means that more base stations are needed. Therefore, at some point, street lights may not only provide light, but also provide access to the mobile gigabit Internet by hosting femtocell base stations.</p><p>5G new radio infographic, comparison of 4G network base stations and 5G urban installations with active directional antennas.<br>4G networks are compared to 5G urban installations with active directional antennas.<br>The antenna is no longer like an antenna<br>The higher frequencies of 5G are very useful for many reasons, one of the most important of which is their huge capacity to support fast data. They have strong directionality and can be used correctly</p>]]></content>
     
     
     <categories>
       
-      <category>Algorithm</category>
+      <category>5G</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>Odd_Even_Occurances</title>
-    <link href="/2021/11/01/Odd%20Even%20Occurances/"/>
-    <url>/2021/11/01/Odd%20Even%20Occurances/</url>
+    <title>String_Question</title>
+    <link href="/2021/08/14/String_Question/"/>
+    <url>/2021/08/14/String_Question/</url>
     
-    <content type="html"><![CDATA[<p>Separate odd and even numbers in an array<br>Given an array of integers, you need to segregate odd and even numbers in an array.<br>Please note: Order of elements can be changed.</p><p>ublic class Seperating {</p><p>public static void main(String[] args) {</p><p>int arr[]={12, 17, 70, 15, 22, 65, 21, 90};<br>arr=separateEvenOddNumbers(arr);<br>System.out.println(“nArray after separating even and odd numbers : “);<br>for (int i = 0; i &lt; arr.length; i++) {<br>    System.out.print(arr[i]+” “);<br>}<br>}</p><p>public static int[] separateEvenOddNumbers(int arr[])<br>{<br>    int left=0;<br>    int right=arr.length-1;<br>        while(arr[left]%2==0)<br>        {<br>            left++;<br>        }<br>        while(arr[right]%2==1)<br>        {<br>            right–;<br>        }</p><pre><code>if(left&lt;right)&#123;int temp=arr[left];arr[left]=arr[right];arr[right]=temp;&#125;return arr;&#125;&#125;</code></pre>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Seperating Odd Even</title>
-    <link href="/2021/10/25/Seperating%20Odd%20Even/"/>
-    <url>/2021/10/25/Seperating%20Odd%20Even/</url>
-    
-    <content type="html"><![CDATA[<p>Given an array of integers, you need to segregate odd and even numbers in an array.<br>Please note: Order of elements can be changed.</p><p>public class Seperating {</p><p>public static void main(String[] args) {</p><p>int arr[]={12, 17, 70, 15, 22, 65, 21, 90};<br>arr=separateEvenOddNumbers(arr);<br>System.out.println(“nArray after separating even and odd numbers : “);<br>for (int i = 0; i &lt; arr.length; i++) {<br>    System.out.print(arr[i]+” “);<br>}<br>}</p><p>public static int[] separateEvenOddNumbers(int arr[])<br>{<br>    int left=0;<br>    int right=arr.length-1;<br>        while(arr[left]%2==0)<br>        {<br>            left++;<br>        }<br>        while(arr[right]%2==1)<br>        {<br>            right–;<br>        }</p><pre><code>    if(left&lt;right)&#123;    int temp=arr[left];    arr[left]=arr[right];    arr[right]=temp;&#125;</code></pre><p>return arr;<br>}<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>First None repeated Number</title>
-    <link href="/2021/10/21/First%20None%20repeated%20Number/"/>
-    <url>/2021/10/21/First%20None%20repeated%20Number/</url>
-    
-    <content type="html"><![CDATA[<p>Find first non repeated character in String in java</p><p>public class first_none_repeatedchar {<br>    public static void main(String[] args) {<br>        String a = “easiest”;<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            Character c = a.charAt(i);<br>            if(a.indexOf(c) == a.lastIndexOf(c))<br>            {<br>                System.out.println(a.charAt(i));<br>                break;<br>            }<br>        }</p><pre><code>&#125;</code></pre><p>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Find Second Largest</title>
-    <link href="/2021/10/15/Find%20Second%20Largest/"/>
-    <url>/2021/10/15/Find%20Second%20Largest/</url>
-    
-    <content type="html"><![CDATA[<p>Java program to find second largest number in an array</p><p>public class Second_largest {<br>    public static void main(String args[])<br>    {<br>        int[] arr1={7,5,6,1,4,2};<br>        int secondHighest=findSecondLargestNumberInTheArray(arr1);<br>        System.out.println(“Second largest element in the array : “+ secondHighest);<br>    }</p><pre><code>public static int findSecondLargestNumberInTheArray(int array[])&#123;    int highest = 0;    int secondHighest = 0;    for (int i = 0; i &lt; array.length; i++) &#123;        if (array[i] &gt; highest) &#123;            secondHighest = highest;            highest = array[i];        &#125; else if (array[i] &gt; secondHighest &amp;&amp; array[i]!=highest)            // Just replace the second highest            secondHighest = array[i];    &#125;    // After exiting the loop, secondHighest now represents the second    // largest value in the array    return secondHighest;&#125;</code></pre><p>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Strings anagram</title>
-    <link href="/2021/10/15/Strings%20Anagram/"/>
-    <url>/2021/10/15/Strings%20Anagram/</url>
-    
-    <content type="html"><![CDATA[<p><img src="/2021/10/15/Strings%20Anagram/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg"> </p><p>Question  Write a java program to check if two Strings are anagram in java?<br>Solution: Two string are anagrams if they have same characters but in different order. For example: Angel and Angle are anagrams<br>There are few ways to check if Strings are anagrams. Some of them are:</p><p>public class anagram_string {<br>    String a = “Angel”;<br>    String b = “Angle”;<br>    public void method1(){<br>        System.out.println(method_compare(a,b));<br>    }</p><p>public boolean method_compare(String a,String b){<br>        if (a.length() != b.length()){<br>            return false;<br>        }<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            char c = a.charAt(i);<br>            if (b.indexOf(c) != -1){<br>//                b = b.substring(0,b.indexOf(c)) + b.substring(b.indexOf(c)+1);<br>                b = b.replace(“c”,””);<br>            }<br>            else{<br>                return false;<br>            }<br>        }<br>        return true;<br>    }</p><p>public void method2(){<br>        System.out.println(compared(a,b));<br>    }<br>    public static boolean compared(String a, String b){<br>        String element1 = sorted(a);<br>        String element2 = sorted(b);<br>        if (element1.equals(element2)){<br>            return true;<br>        }<br>        return false;<br>    }<br>public static String sorted(String word){<br>        char[] arr = word.toCharArray();<br>        Arrays.sort(arr);<br>//        System.out.println(arr);<br>        return String.valueOf(arr);<br>    }</p><p>public static void main(String[] args) {<br>        anagram_string a = new anagram_string();<br>        a.method1();<br>//        String c = “abcdefg”;<br>//        System.out.println(c.substring(0,3));<br>        a.method2();<br>    }<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Train Station</title>
-    <link href="/2021/10/05/Train%20Station/"/>
-    <url>/2021/10/05/Train%20Station/</url>
-    
-    <content type="html"><![CDATA[<p>Find minimum number of platforms required for railway station<br>You are given arrival and departure time of trains reaching to a particular station. You need to find minimum number of platforms required to accommodate the trains at any point of time.</p><p>public class TrainStation {<br>    public static void main(String args[])<br>    {<br>        // arr[] = {1:00, 1:40, 1:50, 2:00, 2:15, 4:00}<br>        // dep[] = {1:10, 3:00, 2:20, 2:30, 3:15, 6:00}</p><p>int arr[] = {100, 140, 150, 200, 215, 400};<br>int dep[] = {110, 300, 210, 230,315, 600};<br>System.out.println(“Minimum platforms needed:”+findPlatformsRequiredForStation(arr,dep,6));<br>}</p><p>static int findPlatformsRequiredForStation(int arr[], int dep[], int n)<br>{<br>    int platform_needed = 0, maxPlatforms = 0;<br>    Arrays.sort(arr);<br>    Arrays.sort(dep);<br>    int i = 0, j = 0;</p><p>// Similar to merge in merge sort<br>while (i &lt; n &amp;&amp; j &lt; n)<br>{<br>    if (arr[i] &lt; dep[j])<br>    {<br>        platform_needed++;<br>        i++;<br>        if (platform_needed &gt; maxPlatforms)<br>            maxPlatforms = platform_needed;<br>    }<br>    else<br>    {<br>        platform_needed–;<br>        j++;<br>    }<br>}<br>return maxPlatforms;<br>}<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Close to given number</title>
-    <link href="/2021/10/02/Close%20to%20given%20number/"/>
-    <url>/2021/10/02/Close%20to%20given%20number/</url>
-    
-    <content type="html"><![CDATA[<p>Given a sorted array and a number x, find the pair in array whose sum is closest to x</p><p>public class close_to_given_num {<br>    public static void main(String[] args) {<br>//        close_to_given_num.method1();<br>        close_to_given_num.method2();<br>    }<br>    public static void method1(){<br>        int[] arr = {-40,-5,1,3,6,7,8,20};<br>        int left = 0, right = arr.length -1 , target = 5, min= arr[0] + arr[1] ;<br>        int diff = Math.abs(target - min), position_left =0, position_right = 0;<br>        while(left &lt; right){<br>            int cur = arr[left] + arr[right];<br>            if(diff &gt; Math.abs(target - cur)){<br>                position_left = left;<br>                position_right = right;<br>                diff = Math.abs(target-cur);<br>            }<br>            if (cur&lt;0){<br>                left ++;<br>            }else{<br>                right –;<br>            }</p><p>}<br>System.out.println(“The position of left: “ + arr[position_left] +<br>        “the position of right: “+arr[position_right] + “is close to the “ + target);</p><p>}<br>public static void method2(){<br>    int[] arr = {-40,-5,1,3,6,7,8,20};<br>    int left = 0, right = arr.length -1 , target = 15;<br>    ArrayList&lt;List<Integer>&gt; ls = new ArrayList&lt;&gt;();<br>    ArrayList<Integer> singleList = new ArrayList<Integer>();</Integer></Integer></Integer></p><p>while(left &lt; right){<br>    int cur = arr[left] + arr[right];<br>    if(cur == target){<br>        singleList.add(arr[left]);<br>        singleList.add(arr[right]);<br>        ls.add(singleList);<br>        left ++;<br>        right –;<br>    }</p><pre><code>else if(cur&lt;target)&#123;    left ++;&#125;else&#123;    right --;&#125;</code></pre><p>}<br>for(List<Integer> i:ls){<br>System.out.println(i);</Integer></p><p>}</p><p>}<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Count number of occurrences</title>
-    <link href="/2021/09/08/Count%20number%20of%20occurrences/"/>
-    <url>/2021/09/08/Count%20number%20of%20occurrences/</url>
-    
-    <content type="html"><![CDATA[<p>Count number of occurrences (or frequency) of each element in a sorted array<br>Given a Sorted Array of integers containing duplicates. Find the frequency of every unique element present in the array.<br>Frequency is defined as the number of occurrence of any element in the array.</p><p>public class count_occurance {<br>    public static void main(String[] args) {<br>        int[] arr = {1, 1, 1, 3, 3, 4, 5, 5, 6, 6};<br>        HashMap&lt;Integer, Integer&gt; occ = new HashMap&lt;&gt;();<br>        for (int i = 0; i &lt; arr.length; i++) {<br>            if(!occ.containsKey(arr[i])){<br>                occ.put(arr[i],1);<br>            }else{<br>                occ.put(arr[i],occ.getOrDefault(arr[i],0)  + 1);<br>            }<br>        }<br>        for (int j : occ.keySet()) {<br>            System.out.println(“Frequence of “+ j + “ is : “ + occ.get(j));<br>        }<br>    }<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>CharacterReplacement</title>
-    <link href="/2021/08/14/CharacterReplacement/"/>
-    <url>/2021/08/14/CharacterReplacement/</url>
-    
-    <content type="html"><![CDATA[<p>class CharacterReplacement {<br>    public static int findLength(String str, int k) {<br>        int windowStart = 0, maxLength = 0, maxRepeatLetterCount = 0;<br>        Map&lt;Character, Integer&gt; letterFrequencyMap = new HashMap&lt;&gt;();<br>        // try to extend the range [windowStart, windowEnd]<br>        for (int windowEnd = 0; windowEnd &lt; str.length(); windowEnd++) {<br>            char rightChar = str.charAt(windowEnd);<br>            letterFrequencyMap.put(rightChar, letterFrequencyMap.getOrDefault(rightChar, 0) + 1);<br>            maxRepeatLetterCount = Math.max(maxRepeatLetterCount, letterFrequencyMap.get(rightChar));</p><p>// current window size is from windowStart to windowEnd, overall we have a letter which is<br>// repeating ‘maxRepeatLetterCount’ times, this means we can have a window which has one letter<br>// repeating ‘maxRepeatLetterCount’ times and the remaining letters we should replace.<br>// if the remaining letters are more than ‘k’, it is the time to shrink the window as we<br>// are not allowed to replace more than ‘k’ letters<br>if (windowEnd - windowStart + 1 - maxRepeatLetterCount &gt; k) {<br>    char leftChar = str.charAt(windowStart);<br>    letterFrequencyMap.put(leftChar, letterFrequencyMap.get(leftChar) - 1);<br>    windowStart++;<br>}</p><p>maxLength = Math.max(maxLength, windowEnd - windowStart + 1);<br>}</p><p>return maxLength;<br>}</p><p>public static void main(String[] args) {<br>    System.out.println(CharacterReplacement.findLength(“aabccbb”, 2));<br>    System.out.println(CharacterReplacement.findLength(“abbcb”, 1));<br>    System.out.println(CharacterReplacement.findLength(“abccde”, 1));<br>    }<br>}</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Algorithm</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Easy</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>missing_number</title>
-    <link href="/2020/04/07/Find%20Missing%20Number/"/>
-    <url>/2020/04/07/Find%20Missing%20Number/</url>
-    
-    <content type="html"><![CDATA[<p>You are given an integer array containing 1 to n but one of the number from 1 to n in the array is missing. You need to provide optimum solution to find the missing number. Number cannot be repeated in the arry.<br>For example:</p><p>int[] arr1={7,5,6,1,4,2};<br>Missing numner : 3<br>int[] arr2={5,3,1,2};<br>Missing numner : 4</p><p>public class missing_number {<br>    public static void main(String[] args) {<br>        int[] arr1={7,5,6,1,4,2};<br>        int[] arr2={5,3,1,2};<br>        int num = arr2.length + 1;<br>        int sum = num * ( num + 1 ) / 2;<br>        int result = sum;</p><p>for (int i = 0; i &lt; arr2.length; i++) {<br>    result -= arr2[i];<br>    System.out.println(result);<br>}</p><p>//        System.out.println(result);<br>    }<br>}</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-Find-the-anagram-String"><a href="#1-Find-the-anagram-String" class="headerlink" title="1 Find the anagram_String"></a>1 Find the anagram_String</h1><p>public class anagram_string {<br>    String a = “Angel”;<br>    String b = “Angle”;<br>    public void method1(){<br>        System.out.println(method_compare(a,b));<br>    }<br>    public boolean method_compare(String a,String b){<br>        if (a.length() != b.length()){<br>            return false;<br>        }<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            char c = a.charAt(i);<br>            if (b.indexOf(c) != -1){<br>//                b = b.substring(0,b.indexOf(c)) + b.substring(b.indexOf(c)+1);<br>                b = b.replace(“c”,””);<br>            }<br>            else{<br>                return false;<br>            }<br>        }<br>        return true;<br>    }<br>    public void method2(){<br>        System.out.println(compared(a,b));<br>    }<br>    public static boolean compared(String a, String b){<br>        String element1 = sorted(a);<br>        String element2 = sorted(b);<br>        if (element1.equals(element2)){<br>            return true;<br>        }<br>        return false;<br>    }<br>    public static String sorted(String word){<br>        char[] arr = word.toCharArray();<br>        Arrays.sort(arr);<br>//        System.out.println(arr);<br>        return String.valueOf(arr);<br>    }<br>    public static void main(String[] args) {<br>        anagram_string a = new anagram_string();<br>        a.method1();<br>//        String c = “abcdefg”;<br>//        System.out.println(c.substring(0,3));<br>        a.method2();<br>    }<br>}</p><h1 id="2-Find-the-duplicate-character"><a href="#2-Find-the-duplicate-character" class="headerlink" title="2.Find the duplicate character"></a>2.Find the duplicate character</h1><p>   public static void main(String[] args) {<br>        String str = “java2”;<br>        HashMap&lt;Character,Integer&gt; charCountMap = new HashMap();<br>        for (int i = 0; i &lt; str.length(); i++) {<br>            char c = str.charAt(i);<br>            if (charCountMap.containsKey(c)) {<br>                charCountMap.put(c, charCountMap.get(c) + 1);<br>            } else {<br>                charCountMap.put(c, 1);<br>            }<br>        }<br>        for (Character c : charCountMap.keySet()) {<br>            if (charCountMap.get(c) &gt; 1)<br>                System.out.println(“duplicate character : “ + c + “ ====== “ + “ count : “ + charCountMap.get(c));<br>        }<br>    }</p><h1 id="3-Find-the-substring"><a href="#3-Find-the-substring" class="headerlink" title="3.Find the substring"></a>3.Find the substring</h1><p> public static void main(String[] args) {<br>        String a = “abcdef”;<br>        String result = “”;<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            for (int j = i+1; j &lt;= a.length(); j++) {<br>                System.out.println(a.substring(i,j));<br>            }<br>        }<br>    }</p><h1 id="4-Find-the-none-repeated-character"><a href="#4-Find-the-none-repeated-character" class="headerlink" title="4.Find the none-repeated character"></a>4.Find the none-repeated character</h1><p>public static void main(String[] args) {<br>        String a = “easiest”;<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            Character c = a.charAt(i);<br>            if(a.indexOf(c) == a.lastIndexOf(c))<br>            {<br>                System.out.println(a.charAt(i));<br>                break;<br>            }<br>        }<br>    }</p><h1 id="5-Find-the-Parlindrome"><a href="#5-Find-the-Parlindrome" class="headerlink" title="5. Find the Parlindrome"></a>5. Find the Parlindrome</h1><p>   public static void main(String[] args) {<br>        System.out.println(method());<br>    }<br>    public static boolean method() {<br>        String a = “A man, a plan, a canal:Panama”;<br>        int left = 0, right = a.length() - 1;<br>        while (left &lt; right) {<br>            while (left &lt; right &amp;&amp; !(helper(a.charAt(left)))) {<br>                left++;<br>            }<br>            while (left &lt; right &amp;&amp; !(helper(a.charAt(right)))) {<br>                right–;<br>            }</p><p>//            if (left &gt;= right) {<br>//                return true;<br>//            }<br>            if (Character.toLowerCase(a.charAt(left)) !=<br>                    Character.toLowerCase(a.charAt(right))) {<br>                return false;<br>            } else {<br>                left++;<br>                right–;<br>            }<br>        }return true;<br>    }<br>//        for (int i = 0; i &lt; a.length(); i++) {<br>//            if(helper(a.charAt(i))){<br>//                b += a.charAt(i);<br>//                }<br>//            }<br>//        System.out.println(b);<br>    public static boolean helper(Character f){<br>        return  (Character.isLetter(f) || Character.isDigit(f));<br>    }<br>}</p><h1 id="6-Find-the-permutation-of-String"><a href="#6-Find-the-permutation-of-String" class="headerlink" title="6 Find the permutation of String"></a>6 Find the permutation of String</h1><p>public static void main(String[] args) {<br>            Set set=permutationOfString(“ABC”);        //ABC stores the set<br>            System.out.println(“Permutations of String ABC are:”);<br>            for (Iterator iterator = set.iterator(); iterator.hasNext();) {<br>                String string = (String) iterator.next();<br>                System.out.println(string);<br>            }<br>        }<br>        public static Set permutationOfString(String str)<br>        {<br>            Set<String> permutationSet=new HashSet();<br>            if(str.length()==0)<br>            {<br>                permutationSet.add(“”);<br>                return permutationSet;<br>            }<br>            // take out first character of String<br>            char c=str.charAt(0);<br>            // Remaining String<br>            String rem=str.substring(1);<br>            Set<String> permutatedSetForRemainingString=permutationOfString(rem);<br>            for (String permutedString: permutatedSetForRemainingString) {<br>                for (int j = 0; j &lt;= permutedString.length(); j++) {<br>                    String permutation=insertFirstCharAtDiffPlaces(permutedString,c,j);<br>                    permutationSet.add(permutation);<br>                }<br>            }<br>            return permutationSet;<br>        }<br>        public static String insertFirstCharAtDiffPlaces(String perm,char firstChar,int index)<br>        {<br>            // Inserting firstCharacter of orig String at difference places based on index<br>            return perm.substring(0,index)+firstChar+perm.substring(index);<br>        }<br>    }</String></String></p><h1 id="7-Reverse-a-string"><a href="#7-Reverse-a-string" class="headerlink" title="7 Reverse a string"></a>7 Reverse a string</h1><p>public static void method1(){<br>        String a = “abcdefg”;<br>        String result = “”;<br>        for (int i = a.length()-1; i &gt;= 0; i–) {<br>            result = result + a.charAt(i);<br>        }<br>        System.out.println(result);<br>    }<br>    public static void method2(){<br>        String a  = “abcdefg”;<br>        StringBuffer aa = new StringBuffer(a);<br>        System.out.println(aa.reverse());<br>    }<br>    public String recursiveReverse(String orig) {<br>        if (orig.length() == 1)<br>            return orig;<br>        else<br>            return orig.charAt(orig.length() - 1) +<br>                    recursiveReverse(orig.substring(0, orig.length() - 1));<br>    }<br>    public static void main(String[] args) {<br>        reverse_string a = new reverse_string();<br>        a.method1();<br>        a.method2();<br>        String blogName = “java2blog”;<br>        String reverse = a.recursiveReverse(blogName);<br>        System.out.println(“Reverse of java2blog is:” + reverse);<br>    }</p><h1 id="8-Check-rotation-of-a-string"><a href="#8-Check-rotation-of-a-string" class="headerlink" title="8 Check rotation of a string"></a>8 Check rotation of a string</h1><p>public class Rotation {<br>    public static boolean method(String st1, String st2){<br>        String st3 = st1 + st1;<br>        if(st3.contains((st2))){<br>            return true;<br>        }<br>        return false;<br>    }<br>    public static void main(String[] args) {<br>        Scanner sc = new Scanner(System.in);<br>        System.out.println(“please input the first string”);<br>        String st1 = sc.nextLine();<br>        System.out.println(“please input the sec string”);<br>        String st2 = sc.nextLine();<br>        Rotation aa = new Rotation();<br>        System.out.println(aa.method(st1,st2));<br>    }<br>}</p><h1 id="9-unique-character-or-not"><a href="#9-unique-character-or-not" class="headerlink" title="9 unique character or not"></a>9 unique character or not</h1><p>public class Unique_or_not {<br>    String a = “ifijk”;<br>    public boolean method() {<br>        HashSet<Character> strings = new HashSet&lt;&gt;();<br>        for (int i = 0; i &lt; a.length() - 1; i++) {<br>            char c = a.charAt(i);<br>            if (!strings.add(c)) {<br>                return false;<br>            }<br>        }<br>        return true;<br>    }<br>    public boolean method2(){<br>        for (int i = 0; i &lt; a.length(); i++) {<br>            char c = a.charAt(i);<br>            if(a.indexOf(c)!=a.lastIndexOf(c)){<br>                return false;<br>            }<br>        }<br>        return true;<br>    }<br>    public static void main(String[] args) {<br>        Unique_or_not test = new Unique_or_not();<br>        System.out.println(test.method());<br>        System.out.println(test.method2());<br>    }</Character></p><p>}</p>]]></content>
     
     
     <categories>
